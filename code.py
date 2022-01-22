@@ -2,7 +2,7 @@ def are_valid_groups(groups, studentNumbers):
     flatten = [x for y in groups for x in y]
     check1 =  all(item in flatten for item in studentNumbers)
     check2 = all(item in studentNumbers for item in flatten)
-    if check1 and check2 == True:
+    if check1 and check2 != True:
         return True
     else:
         return False
