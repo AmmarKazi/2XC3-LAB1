@@ -1,10 +1,8 @@
 def are_valid_groups(groups, studentNumbers):
-    flatten = [x for y in groups for x in y]
-    check1 =  all(item in flatten for item in studentNumbers)
-    check2 = all(item in studentNumbers for item in flatten)
-    if check1 and check2 == True:
-        return True
+    nest = [i for group in groups for i in group]
+    ans = all(student in nest for student in students)
+
+    if ans:
+        return True  
     else:
         return False
-
-print(are_valid_groups([[1,2,3],[4,5,6],[7,8]], [1,2,3,4,5,6,7,8,9]))
